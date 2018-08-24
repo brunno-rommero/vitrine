@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Vitrine</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Bruno Monteiro">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <div style="width: 1024px; margin: 0px auto;">
+
+
+                <center><h2 id="title" class="title">Vitrine Loja Chaordic OnSite</span></h2></center>
+                <hr>
+                <center><h2 id="reference" class="reference">Busca Recente</span></h2></center>
+
+                <div class="item-referencia vitrine-wrapper" id="produtoReferenciaView"></div>
+                <center><h2 id="relacio" class="relacio">Relacionados</span></h2></center>
+                <div class="lista-produto vitrine-wrapper">
+                    <div class="slider">
+
+                        <div class="previous-slide">
+                            <i id="previous" class="fas fa-arrow-circle-left" onclick="sliderController.previousSlide()"></i>
+                        </div>
+                        <div class="next-slide">
+                            <i id="next" class="fas fa-arrow-circle-right" onclick="sliderController.nextSlide()"></i>
+                        </div>
+
+                        <div class="content-slider" id="contentSliderView">
+                            <ul class="produtos"></ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/Helpers/LoadApiHelper.js"></script>
+        <script src="js/Helpers/ExecuteResponseHelper.js"></script>
+        <script src="js/Controllers/FrontController.js"></script>
+        <script src="js/Controllers/ItemReferenceController.js"></script>
+        <script src="js/Views/ItemReferenceView.js"></script>
+        <script src="js/Controllers/ItensSlideController.js"></script>
+        <script src="js/Views/ItensSlideView.js"></script>
+        <script src="js/Controllers/SliderController.js"></script>
+        <script>
+            var sliderController = {};
+
+            function X(objeto) {
+                // executa a aplicaçao
+                let frontController = new FrontController(objeto);
+                sliderController = frontController.getInstanceOfSliderController();
+            }
+        </script>
+
+        <script src="http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X"></script>
+    </body>
+</html>
